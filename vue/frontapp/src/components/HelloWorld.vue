@@ -46,6 +46,7 @@ export default {
       const result = await axios.get("http://n-okamoto.t.telsys.co.jp:3333");
       this.tasks = result.data;
     } catch (err) {
+      console.log("okamooooooooooj");
       alert(JSON.stringify(err));
     }
   },
