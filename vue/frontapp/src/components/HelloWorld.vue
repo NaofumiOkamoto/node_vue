@@ -48,6 +48,7 @@ export default {
     } catch (err) {
       console.log("okamooooooooooj");
       alert(JSON.stringify(err));
+      console.log(JSON.stringify(err));
     }
   },
   methods: {
