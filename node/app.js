@@ -43,7 +43,7 @@ app.use(function(err, req, res, next) {
 });
 
 // node再起動のため記述
-app.listen(3000, function() {
+app.listen(3333, function() {
   console.log("Node server is started!!!!!!");
 });
 
