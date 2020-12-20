@@ -2,6 +2,8 @@ version: "3"
 services:
   https-portal:
     image: steveltn/https-portal:1
+    ports:
+      - '80:80'
     restart: always
     environment:
       DOMAINS: 'n-okamoto.t.telsys.co.jp:3333 -> http://n-okamoto.t.telsys.co.jp:3333'
