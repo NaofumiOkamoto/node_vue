@@ -43,7 +43,7 @@ export default {
   }),
   created: async function() {
     try {
-      const result = await axios.get("http://192.168.241.12:3333");
+      const result = await axios.get("http://localhost:3333");
       this.tasks = result.data;
     } catch (err) {
       alert(JSON.stringify(err));
@@ -52,7 +52,7 @@ export default {
   methods: {
     taskCreate: async function() {
       try {
-        const result = await axios.post("http://192.168.241.12:3333/task", {
+        const result = await axios.post("http://localhost:3333/task", {
           task: this.currentTask
         });
         this.tasks.push(result.data);
@@ -63,7 +63,7 @@ export default {
     },
     taskDelete: async function(id, index) {
       try {
-        await axios.delete("http://192.168.241.12:3333/task/" + id);
+        await axios.delete("http://localhost:3333/task/" + id);
         this.currentTask = "";
         this.tasks.splice(index, 1);
       } catch (err) {
@@ -72,7 +72,7 @@ export default {
     },
     taskUpdate: async function(id, val) {
       try {
-        await axios.put("http://192.168.241.12:3333/task/" + id, {
+        await axios.put("http://localhost:3333/task/" + id, {
           task: val
         });
         alert("タスクを修正しました");
