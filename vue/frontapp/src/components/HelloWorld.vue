@@ -43,8 +43,9 @@ export default {
   }),
   created: async function() {
     try {
-      const result = await axios.get("http://n-okamoto.t.telsys.co.jp:3333");
+      const result = await axios.get("https://n-okamoto.t.telsys.co.jp:3333");
       this.tasks = result.data;
+      console.log(result);
     } catch (err) {
       console.log("okamooooooooooj");
       alert(JSON.stringify(err));
@@ -54,7 +55,7 @@ export default {
   methods: {
     taskCreate: async function() {
       try {
-        const result = await axios.post("http://n-okamoto.t.telsys.co.jp:3333/task", {
+        const result = await axios.post("https://n-okamoto.t.telsys.co.jp:3333/task", {
           task: this.currentTask
         });
         this.tasks.push(result.data);
@@ -65,7 +66,7 @@ export default {
     },
     taskDelete: async function(id, index) {
       try {
-        await axios.delete("http://n-okamoto.t.telsys.co.jp:3333/task/" + id);
+        await axios.delete("https://n-okamoto.t.telsys.co.jp:3333/task/" + id);
         this.currentTask = "";
         this.tasks.splice(index, 1);
       } catch (err) {
@@ -74,7 +75,7 @@ export default {
     },
     taskUpdate: async function(id, val) {
       try {
-        await axios.put("http://n-okamoto.t.telsys.co.jp:3333/task/" + id, {
+        await axios.put("https://n-okamoto.t.telsys.co.jp:3333/task/" + id, {
           task: val
         });
         alert("タスクを修正しました");
