@@ -6,7 +6,7 @@ services:
       - '8080:8080'
     restart: always
     environment:
-      DOMAINS: 'n-okamoto.t.telsys.co.jp:3333 -> http://n-okamoto.t.telsys.co.jp:3333'
+      DOMAINS: 'n-okamoto.t.telsys.co.jp -> http://n-okamoto.t.telsys.co.jp:3333'
       STAGE: production
   node:
     build: node/.
